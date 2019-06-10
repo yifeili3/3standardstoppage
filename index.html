@@ -16,32 +16,39 @@
             </div>
         </section>
         <section class="main-page" style="display:none">
-            <div class="background"></div>
+            <div class="mask"><img class="details"></div>
             <div class="transparent_logo">
                 <img src="image/logo.svg" class="icon-img">
             </div>
+            <div id="logo-shop">
+                <a href="https://3ssstudios.com">
+                    <img src="image/logo_shop.png" class="icon-img">
+                </a>
+            </div> 
             <div id="logo-bungee">
                 <a href="https://www.google.com" >
                     <img src="image/logo_bungee.png" class="icon-img">
                 </a>
             </div>
+            <div id="logo-post">
+                <img src="image/logo_post.png" class="icon-img">
+            </div>           
             <div id="logo-coffee">
                 <img src="image/logo_coffee.png" class="icon-img" >
             </div>
-            <div id="logo-post">
-                <img src="image/logo_post.png" class="icon-img">
-            </div>
+            
             <div id="logo-podcast">
-                <img src="image/logo_podcast.png" class="icon-img">
+                <img id="podcast0" src="image/logo_podcast.png" class="icon-img">
+                <img id="podcast1" src="image/logo_podcast_hidden.png" class="icon-img">
             </div>
             <div id="navi">
                 <div class="hover-container">
-                    <div class="hover-text"><p>Contact us</p></div>
-                    <div class="hover-icon"><a href="https://3ssstudios.com"><img src="image/logo_smile.png" style="width:40px;height:40px"></a></div>
+                    <div class="hover-text"><a href="https://3ssstudios.com" class="hover-link"><img src="image/contact.png" class="icon-img"></a></div>
+                    <div class="hover-icon"><img src="image/logo_smile.png" style="width:30px;height:30px"></div>
                 </div>
                 <div class="hover-container" >
-                    <div class="hover-text" ><p>About us</p></div>
-                    <div class="hover-icon"><a href="https://3ssstudios.com"><img src="image/logo_pool.png" style="width:40px;height:40px"></a></div>
+                    <div class="hover-text" ><a href="https://3ssstudios.com" class="hover-link"><img src="image/about.png" class="icon-img"></a></div>
+                    <div class="hover-icon"><img src="image/logo_pool.png" style="width:30px;height:30px"></div>
                 </div>
                 
             </div>
@@ -53,15 +60,46 @@
             setTimeout(function(){
                 $(".landing").hide();
                 $(".main-page").show();
-                $('video').trigger('pause');
+                $(".transparent_logo").addClass("animate");
                 }, 5000); 
         }
+        
+        $("#logo-post").hover(
+            function(){
+                $("#logo-bungee").hide(0, showDetails("post_hidden", "20%", "10%"));
+            },
+            function(){
+                $("#logo-bungee").show(0, hideDetails());
+            }
+        );
 
-        // function showHoverText(id){
-        //     document.getElementById(id).style.setProperty("visibility","visible");
-        // }
-        // function hideHoverText(id){
-        //     document.getElementById(id).style.setProperty("visibility", "hidden");     
-        // }
+        $("#logo-bungee").hover(
+            function(){
+                $("#logo-post").hide(0, showDetails("bungee_hidden", "20%", "10%"));
+            },
+            function(){
+                $("#logo-post").show(0, hideDetails());
+            }
+        );
+
+        function showDetails(name, pos_to_right, pos_to_top){
+            $(".mask").css({"visibility": "visible",});
+            $(".mask").animate({opacity: 1},{duration: 300});
+            $(".details").attr("src", "image/"+ name + ".png");
+            $(".details").css({
+                "height": "70%",
+                "width": "auto",
+                "position": "absolute",
+                "top": pos_to_top,
+                "right": pos_to_right
+            });
+        }
+
+        function hideDetails(){
+            $(".mask").animate({opacity: 0},{duration: 200});
+            $(".mask").css({"visibility": "hidden"});
+            $(".details").removeAttr("src");
+        }
+
     </script>
 </html>
