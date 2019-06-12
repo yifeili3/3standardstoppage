@@ -15,7 +15,7 @@
                 <img src="image/logo.svg" class="icon-img">
             </div>
         </section>
-        <section class="main-page" style="display:none">
+        <section class="main-page" style="visibility: hidden">
             <div class="mask"><img class="details"></div>
             <div class="transparent_logo">
                 <img src="image/logo.svg" class="icon-img">
@@ -26,28 +26,34 @@
                 </a>
             </div> 
             <div id="logo-bungee">
-                <a href="https://www.google.com" >
+                <a href=" http://bungeeproject.com/" >
                     <img src="image/logo_bungee.png" class="icon-img">
                 </a>
             </div>
             <div id="logo-post">
-                <img src="image/logo_post.png" class="icon-img">
+                <a href="https://3ssstudios.com/pages/store">
+                    <img src="image/logo_post.png" class="icon-img">
+                </a>
             </div>           
             <div id="logo-coffee">
-                <img src="image/logo_coffee.png" class="icon-img" >
+                    <img src="image/logo_coffee.png" class="icon-img" >
             </div>
             
             <div id="logo-podcast">
-                <img id="podcast0" src="image/logo_podcast.png" class="icon-img">
-                <img id="podcast1" src="image/logo_podcast_hidden.png" class="icon-img">
+                <a href="https://music.163.com/#/dj?id=1367717969&_hash=songlist-531827770">
+                    <img id="podcast0" src="image/logo_podcast.png" class="icon-img">
+                </a>
+                 <a href="https://music.163.com/#/dj?id=1367717969&_hash=songlist-531827770">
+                    <img id="podcast1" src="image/logo_podcast_hidden.png" class="icon-img">
+                </a>
             </div>
             <div id="navi">
                 <div class="hover-container">
-                    <div class="hover-text"><a href="https://3ssstudios.com" class="hover-link"><img src="image/contact.png" class="icon-img"></a></div>
+                    <div class="hover-text"><a href="https://3ssstudios.com/pages/contact" class="hover-link"><img src="image/contact.png" class="icon-img"></a></div>
                     <div class="hover-icon"><img src="image/logo_smile.png" style="width:30px;height:30px"></div>
                 </div>
                 <div class="hover-container" >
-                    <div class="hover-text" ><a href="https://3ssstudios.com" class="hover-link"><img src="image/about.png" class="icon-img"></a></div>
+                    <div class="hover-text" ><a href="https://3ssstudios.com/pages/about-1" class="hover-link"><img src="image/about.png" class="icon-img"></a></div>
                     <div class="hover-icon"><img src="image/logo_pool.png" style="width:30px;height:30px"></div>
                 </div>
                 
@@ -59,11 +65,11 @@
         function loadMainPage() { 
             setTimeout(function(){
                 $(".landing").hide();
-                $(".main-page").show();
+                $(".main-page").css({"visibility":"visible"});
                 $(".transparent_logo").addClass("animate");
-                }, 5000); 
+                }, 3000);
         }
-        
+
         $("#logo-post").hover(
             function(){
                 $("#logo-bungee").hide(0, showDetails("post_hidden", "20%", "10%"));
@@ -82,9 +88,18 @@
             }
         );
 
+        $("#logo-shop").hover(
+            function(){
+                $("#logo-shop").stop();
+            }, 
+            function(){
+                $("#logo-shop").animate(animateDiv($("#logo-shop")));
+            }
+        );
+
         function showDetails(name, pos_to_right, pos_to_top){
             $(".mask").css({"visibility": "visible",});
-            $(".mask").animate({opacity: 1},{duration: 300});
+            $(".mask").stop().animate({opacity: 1},{duration: 300});
             $(".details").attr("src", "image/"+ name + ".png");
             $(".details").css({
                 "height": "70%",
@@ -96,10 +111,56 @@
         }
 
         function hideDetails(){
-            $(".mask").animate({opacity: 0},{duration: 200});
+            $(".mask").stop().animate({opacity: 0},{duration: 200});
             $(".mask").css({"visibility": "hidden"});
             $(".details").removeAttr("src");
         }
 
+        $(document).ready(function(){ 
+            animateDiv($("#logo-shop"));
+        });
+
+        function makeNewPosition(){
+    
+            var hmax = Math.floor(($(window).height() *  0.5));
+            var hmin = Math.floor( $(window).height() *  0.1);
+            var wmax = Math.floor($(window).width() * 0.7);
+            var wmin = Math.floor($(window).width() * 0.15);
+            
+            var nh = Math.floor(Math.random()* (hmax - hmin + 1) + hmin);
+            var nw = Math.floor(Math.random()* (wmax- wmin) + wmin);
+            
+            return [nh,nw];    
+            
+        }
+
+        function animateDiv($target) {
+            var newq = makeNewPosition();
+            var oldq = $target.offset();
+            var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+            $target.animate({
+                top: newq[0],
+                left: newq[1]
+            }, {duration: speed, easing: "linear", complete: function() {
+                animateDiv($target);
+            }});
+
+        };
+
+function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = 0.03;
+
+    var speed = Math.ceil(greatest / speedModifier);
+
+    return speed;
+
+}
     </script>
 </html>
