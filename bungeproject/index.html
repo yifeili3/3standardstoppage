@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title> Bungee Project </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="divider"></div>
+            <div class="pined-top">
+                <div id="bungee-logo"><img src="image/logo_bungee.png"></div>
+                <div id="bungee-title"><img src="image/bungeeproject.png" onclick="displayCurrent('#popup')"></div>       
+            </div>
+            <div class="pined-bottom">
+                
+                <!-- Menu -->
+                <div class="menu-container">
+                    <div class="poster">
+                        <div class="poster-info">
+                            <h2>Bungee Pop-Up Store & Events</h2>
+                            <p>325 Canal St, New York, NY 10003</p>
+                            <p>July 5 - 28. 2019</p>
+                            <p>Opening Reception : July 4. 2019, 7pm - Midnight</p>
+                            <p>Hours : Tue - Sun 11am - 8pm </p>
+                        </div>                        
+                        <div class="marquee">
+                            <marquee style="padding-top: 10px;">WELCOME WELCOME WELCOME WELCOME WELCOME</marquee>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a onclick="displayCurrent('#curator')">Curator</a></li>                        
+                            <li><a onclick="displayCurrent('#artist')">Artists</a></li>
+                            <li><a onclick="displayCurrent('#program')">Programs</a></li>
+                            <li><a onclick="displayCurrent('#about')">About</a></li>
+                            <li><a onclick="displayCurrent('#press')">Press</a></li>
+                            <li><a onclick="displayCurrent('#information')">Info</a></li>
+                            <li><a onclick="displayCurrent('#archive')">Archive</a></li>  
+                            <li><a onclick="displayCurrent('#contact')">Contact</a></li>
+                            <li class="subscribe-3sss"><a onclick="displaySubscription()">Subscribe</a></li>
+                            <li class="subscribe-bar"><div class="subscription">
+                            <form action="https://myshopify.us16.list-manage.com/subscribe/post-json?u=7c58fdec8c3b7ff2aec6c4873&amp;id=6f3c25a912&c=?" method="post" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                <div class="input-group">
+                                <input type="email" name="EMAIL" class="input-field" id="mce-EMAIL">
+                                </div>
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7c58fdec8c3b7ff2aec6c4873_6f3c25a912" tabindex="-1" value=""></div>
+                                </div>
+                            </form>
+                        </div></li>   
+                        </ul>
+                    </div>
+                    <div class="shop">
+                        <a href="https://3ssstudios.com" target="_blank"><img src="image/logo_shop.png" style="width: 20%; height:20%"></a>
+                    </div>
+                    
+                    <div class="footer">
+                        <div class="social" style="float: left; width:40%; text-align: left">
+                            <a href="https://www.facebook.com/3standardstoppage/" target="_blank"><img src="image/facebook-f-brands.svg" style="width:15px;height: 15px"></a>
+                            <a href="https://www.instagram.com/3standardstoppage/" target="_blank"><img src="image/instagram-brands.svg" style="width:15px;height: 15px"></a>
+                            <a href="https://www.weibo.com/3standardstoppage?is_hot=1" target="_blank"><img src="image/weibo-brands.svg" style="width:15px;height: 15px"></a>
+                            <a href="https://3standardstoppage.tumblr.com"><img src="image/tumblr-brands.svg" style="width:15px;height: 15px"></a>
+                        </div>
+                        <div class="copyright" style="float: right; width:60%; text-align:right; padding-right:5px"><a href="http://www.3standardstoppage.com" target="_blank">© 2019 3STANDARDSTOPPAGE</a></div>
+                    </div>
+                    
+                </div>                
+                <!-- Menu -->
+                <!-- Content -->
+                <div class="content-container">
+                    <div class="contents">
+                        <div class="contents-inner" id="popup" style="display: block; text-align: center">
+                            <img src="image/poster.jpg" style="height: 650px;; width:auto">
+                        </div>
+                        <div class="contents-inner" id="curator" style="text-align: right">
+                            <img src="image/bungee_hidden.png" style="width: 100%; height:auto">
+                            <h3> Shisi Huang / <a href="http://www.3standardstoppage.com" target="_blank">3standardstoppage</a></h3>
+                        </div>
+                        <div class="contents-inner" id="artist">
+                            <ul>
+                                <li><a href="https://www.instagram.com/3standardstoppage/" target="_blank">3standardstoppage studio, Art Collective & Publisher, NYC & Beijing.</a></li>
+                                <li><a href="https://www.instagram.com/cici.lixi/" target="_blank">Xi Li, Artist, San Francisco.</a></li>
+                                <li><a href="https://www.instagram.com/feyfeyworldwide/" target="_blank">fey fey WORLDWIDE, Fashion Designer, NYC.</a></li>
+                                <li><a href="https://www.instagram.com/10.gu/" target="_blank">Taylor Gray, Furniture Designer, NYC.</a></li>
+                                <li><a href="https://www.instagram.com/northychen/" target="_blank">Northy Chen, Artist & Writer, NYC.</a></li>
+                                <li><a href="https://www.instagram.com/mironintercontinental/" target="_blank">Miron Kiselev, Fashion Designer, NYC.</a></li>
+                                <li><a href="https://www.instagram.com/awu_image/" target="_blank">Anyan Wu x Xiangfei Ran, Artist & Designer, Jingdezheng & NYC.</a></li>
+                                <li><a href="https://www.instagram.com/MeltingWang/" target="_blank">Melting Wang, Artist & Designer, Beijing & Milan.</a></li>
+                                <li><a href="https://www.instagram.com/Templo_/" target="_blank">TemploTemplo, Archival Designer Collector, NYC.</a></li>
+                                <li><a href="https://www.instagram.com/Sample.cm/" target="_blank">Sample_cm, Sportswear Designer Brand, Berlin.</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents-inner" id="program">
+                            <img src="image/program.gif" style="height:800px; width:500px">
+                            <!--<div class="slideshow">
+                               <img class="slides-img"  src="image/archive/archive_1.png" style="width: auto;height:100%">
+                               <img class="slides-img" src="image/archive/archive_2.png" style="width: auto;height:100%"> 
+                               <img class="slides-img" src="image/archive/archive_3.png" style="width: auto;height:100%"> 
+                            </div>
+                            <p>3standardstoppage x fey fey WORLDWIDE swimwear & sleeve bags </p>
+                            <p>Bungee products series of designs </p>
+                            <p>Xi Li, new book release</p>
+                            <p>Northy Chen, WI-FI Poet book release</p>
+                            <p>Anyan Wu x Xiangfei Ran ceramic mini show </p>
+                            <p>Taylor Gray - Space Design & Taylor’s new furniture works release</p>
+                            <p>3standardstoppage x Templo - curated archival designer collection</p>
+                            <p>fey fey WORLDWIDE 2020SS collection release</p>
+                            <p>Sample_cm 2020 collection release</p>-->
+                        </div>
+                        <div class="contents-inner" id="about">
+                            <p> 3standardstoppage was born in the dilemma period of making choices of how to step in the real world for three MFA graduates. The discussion, debate, negation, and reconstruction about art has been a long-term course for us. In the past two years, we have been based in San Francisco, created a multi-functional (retail) space as a designer clothing boutique, art-book store, art gallery, independent publisher and podcast archivist. 3standardstoppage has been relocating in Beijing and New York since 2019. Based in two most energetic cities in the world, we experiment localizing the original concepts from  SF 1.0 store, creating unique crossover collaborations among artists, fashion designers, and creative intellectuals worldwide. </p>
+                            
+                            <p> As a subsidiary of 3standardstoppage, Bungee Project | 蹦极计划 is an experimental program that creates a self-sustaining ecology system by taking the role on further thinking, exploring and archiving the path of building variable intellectual constructs from the standard ruler. In the meanwhile, it supports 3standardstoppage’s commercial plan with each other. </p>
+
+                            <p> Bungee Project | 蹦极计划 Pop-Up Store, as the very first event we host in New York City, is also the first onsite practice and release of Bungee Project. Aiming to create experimental retail experiences, Pop-Up Store will multi-function as a clothing boutique, ArtBook shop, collaborative projects showroom, art exhibition space and live music space, tea tasting lab. It provides a dynamic social platform for creative talents in different majors, explaining a model that proposes a new way of living with experiential art and design marketing. Experiential marketing addresses not simply the wants and needs, but the self-image, social goals, dormant emotions, values and deeply ingrained desires of the consumer.</p>
+ 
+                            <p>—— Shisi Huang & Xi Li / <a href="http://www.3standardstoppage.com" target="_blank">3standardstoppage</a></p>
+                            <p>June.14 2019</p>
+                        </div>
+                        <div class="contents-inner" id="press"></div>
+                        <div class="contents-inner" id="archive">
+                            <div style="height: 300px; width: 300px; position: relative; left:0; padding:20px">
+                                <a href="https://3ssstudios.com/pages/no-6-3standardstoppage-art-book-in-china-2019" target="_blank"><img src="image/archive/archive_1.png" style="height: 100%; width:auto;"></a></div>
+                            <div style="height: 300px; width: 300px; position: relative; left:70%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/how-to-make-a-standardstoppage" target="_blank"><img src="image/archive/archive_2.png" style="height: 100%; width:auto;"></a></div>
+                            <div style="height: 300px; width: 300px; position: relative; left:20%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/3standardstoppage-sfabf-2018" target="_blank"><img src="image/archive/archive_3.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 200px; width: 200px; position: relative; left:65%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/no-4-fading-gesture-a-popup-photobook-library-and-bookshop-presented-by-3ssstudios-com-at-dream-farm-commons" target="_blank"><img src="image/archive/archive_4.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 200px; width: 200px; position: relative; left:10%; padding:20px">
+                                <a href="https://vimeo.com/254819793" target="_blank"><img src="image/archive/archive_5.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 300px; width: 300px; position: relative; left:70%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/no-1-zhaoqian-x-3standardstoppage-artist-talk-exhibition" target="_blank"><img src="image/archive/archive_6.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 300px; width: 300px; position: relative; left:30%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/a-pause-to-contemplate-the-light-recording-space" target="_blank"><img src="image/archive/archive_7.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 100px; width: 100px; position: relative; left:60%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/no-3-yellow-the-plum-solo-exhibition-by-shengbin-wu" target="_blank"><img src="image/archive/archive_8.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 100px; width: 100px; position: relative; left:10%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/teenager-detective-duo" target="_blank"><img src="image/archive/archive_9.png" style="height: 100%; width:auto"></a></div>
+                            <div style="height: 300px; width: 300px; position: relative; left:65%; padding:20px">
+                                <a href="https://3ssstudios.com/pages/plots1" target="_blank"><img src="image/archive/archive_10.png" style="height: 100%; width:auto"></a></div>
+                        </div>
+
+                        <div class="contents-inner" id="information">
+                                <h3>Team</h3>
+                                <p>Shisi Huang, Director & Curator, Co-founder of 3standardstoppage <br>
+                                Xi Li, Design Director<br>
+                                Yifei Li, Web Designer<br>
+                                Yufei Liu, Production Director<br>
+                                Taylor Gray, Space Designer<br>
+                                Anyan Wu, Curatorial Coordinator & Press Manager<br>
+                                Cody Kim, Designer Assistant<br>
+                                Xueqi He, Associate Assistant<br>
+                                Ben Li, Production Assistant<br>
+                                Icy Yi, Production Assistant<br>
+                                George Duan, Special Supporting</p>
+                                <br><br><br>
+                                <h3>Host</h3>
+                                <a href="http://www.3standardstoppage.com" target="_blank"><img src="image/logo_3sss.png" style="height: 60px; width:auto;"></a>                            
+                                <h3>Support</h3>
+                                <a href="https://www.oncanal.nyc/" target="_blank">
+                                    <img src="image/logo_oncanal.png" style="height: 30px; width:auto; margin-right:20px;">
+                                </a>
+                                <a href="https://www.oncanal.nyc/" target="_blank">
+                                    <img src="image/logo_wallplay.png" style="height: 20px; width:auto;margin-right:20px;">
+                                </a>
+                                <img src="image/logo_letea.png" style="height: 30px; width:auto;margin-right:200px;"> 
+                        </div>
+                        <div class="contents-inner" id="contact">
+                            <p>General Question: <a href="mailto: customer@3standardstoppage.com" target="_blank">customer@3standardstoppage.com</a></p>
+                            <p>Press Inquiry: <a href="mailto: info@3standardstoppage.com" target="_blank">info@3standardstoppage.com</a></p>
+                            <p>Ads Support: <a href="mailto: info@3standardstoppage.com" target="_blank">info@3standardstoppage.com</a></p>
+                        </div>                                                                       
+                    </div>
+                </div>
+                <!-- Content -->                  
+            <div>
+        </div>
+        <script>
+            function displayCurrent(id){
+                $(".contents-inner").hide();
+                $(id).show();
+            };
+
+            function displaySubscription(){
+                $(".subscribe-3sss").hide();
+                $(".subscription").show();
+            };
+
+
+            $(document).ready( function () {
+               var $form = $('form');
+
+                if ( $form.length > 0 ) {
+                    $('form input[type="email"]').keydown(function(event){
+                        if (event.which ==13){
+                            event.preventDefault();
+                            register($form);
+                        } 
+                    });
+                }
+            });
+
+            function register($form) {
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    cache       : false,
+                    dataType    : 'json',
+                    contentType: "application/json; charset=utf-8",
+                    success     : function(data) {
+                        if (data.result != "success") {
+                            $(".subscribe-bar").hide();
+                            $("li.subscribe-3sss").replaceWith("<li class=\"subscribe-3sss\"><a>Thank you for subscribing!</a></li>");
+                            setTimeout(function(){
+                                $("li.subscribe-3sss").hide();                                
+                                $("li.subscribe-3sss").replaceWith("<li class=\"subscribe-3sss\"><a onclick=\"displaySubscription()\">Subscribe</a></li>");
+                            }, 3000);
+                        } else {                            
+                            $(".subscribe-bar").hide();
+                            $("li.subscribe-3sss").replaceWith("<li class=\"subscribe-3sss\"><a>Thank you for subscribing!</a></li>");
+                            setTimeout(function(){
+                                $("li.subscribe-3sss").hide();
+                                $("li.subscribe-3sss").replaceWith("<li class=\"subscribe-3sss\"><a onclick=\"displaySubscription()\">Subscribe</a></li>");
+                            }, 3000);
+                        }
+                    }
+                });
+            }
+
+
+            // var index=0;
+            // slide();
+            // function slide(){
+            //     var i;
+            //     var x = document.getElementsByClassName("slides-img");
+            //     for (i=0;i<x.length;i++){
+            //         x[i].style.display = "none";
+            //     }
+            //     index++;
+            //     if (index > x.length){index=1;}
+            //     x[index-1].style.display="block";
+            //     setTimeout(slide, 4000);
+            // }
+
+        </script>
+    </body>
+</html>

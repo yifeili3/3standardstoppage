@@ -5,6 +5,12 @@
         <title>3StandardStoppage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css" type="text/css">
+        <meta property="og:url" content="https://www.3standardstoppage.com/">
+        <meta title="og:title" content="3StandardStoppage Studio">
+        <link rel="icon" size="192x192" href="image/logo_pool.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="3StandardStoppage Studio">       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body onload="loadMainPage()">
@@ -18,20 +24,20 @@
         <section class="main-page" style="visibility: hidden">
             <div class="mask"><img class="details"></div>
             <div class="transparent_logo">
-                <img src="image/logo.svg" class="icon-img">
+                <a href="http://www.3standardstoppage.com"><img src="image/logo.svg" class="icon-img"></a>
             </div>
             <div id="logo-shop">
-                <a href="https://3ssstudios.com">
+                <a href="https://3ssstudios.com" target="_blank">
                     <img src="image/logo_shop.png" class="icon-img">
                 </a>
             </div> 
             <div id="logo-bungee">
-                <a href=" http://bungeeproject.com/" >
+                <a href=" http://www.bungeeproject.com/" target="_blank">
                     <img src="image/logo_bungee.png" class="icon-img">
                 </a>
             </div>
             <div id="logo-post">
-                <a href="https://3ssstudios.com/pages/store">
+                <a href="https://3ssstudios.com/pages/store" target="_blank">
                     <img src="image/logo_post.png" class="icon-img">
                 </a>
             </div>           
@@ -40,20 +46,20 @@
             </div>
             
             <div id="logo-podcast">
-                <a href="https://music.163.com/#/dj?id=1367717969&_hash=songlist-531827770">
+                <a href="https://music.163.com/#/dj?id=1367717969&_hash=songlist-531827770" target="_blank">
                     <img id="podcast0" src="image/logo_podcast.png" class="icon-img">
                 </a>
-                 <a href="https://music.163.com/#/dj?id=1367717969&_hash=songlist-531827770">
+                 <a href="https://music.163.com/#/dj?id=1367717969&_hash=songlist-531827770" target="_blank">
                     <img id="podcast1" src="image/logo_podcast_hidden.png" class="icon-img">
                 </a>
             </div>
             <div id="navi">
                 <div class="hover-container">
-                    <div class="hover-text"><a href="https://3ssstudios.com/pages/contact" class="hover-link"><img src="image/contact.png" class="icon-img"></a></div>
+                    <div class="hover-text"><a href="https://3ssstudios.com/pages/contact" target="_blank" class="hover-link"><img src="image/contact.png" class="icon-img"></a></div>
                     <div class="hover-icon"><img src="image/logo_smile.png" style="width:30px;height:30px"></div>
                 </div>
                 <div class="hover-container" >
-                    <div class="hover-text" ><a href="https://3ssstudios.com/pages/about-1" class="hover-link"><img src="image/about.png" class="icon-img"></a></div>
+                    <div class="hover-text" ><a href="https://3ssstudios.com/pages/about-1" target="_blank" class="hover-link"><img src="image/about.png" class="icon-img"></a></div>
                     <div class="hover-icon"><img src="image/logo_pool.png" style="width:30px;height:30px"></div>
                 </div>
                 
@@ -72,16 +78,37 @@
 
         $("#logo-post").hover(
             function(){
-                $("#logo-bungee").hide(0, showDetails("post_hidden", "20%", "10%"));
+                $("#logo-bungee").hide(0, showDetails("post_hidden", "20%", "10%", "70%", "auto"));
             },
             function(){
                 $("#logo-bungee").show(0, hideDetails());
             }
         );
 
+        var index=0;
+        var name="";
+        
         $("#logo-bungee").hover(
             function(){
-                $("#logo-post").hide(0, showDetails("bungee_hidden", "20%", "10%"));
+                $("#logo-post").hide(0, function(){
+                    var top, right, height, width;
+                    if (index==0){
+                        name="bungee_hidden";
+                        top = "30%";
+                        right = "40%";
+                        height = "70%";
+                        width = "auto";
+                        index++;
+                    } else {
+                        name="bungee_hidden_1"; 
+                        top = "0%";
+                        right = "0%";
+                        height = "auto";
+                        width = "100%";
+                        index=0;                       
+                    }
+                    showDetails(name, right, top, height, width);
+                    });
             },
             function(){
                 $("#logo-post").show(0, hideDetails());
@@ -97,13 +124,13 @@
             }
         );
 
-        function showDetails(name, pos_to_right, pos_to_top){
+        function showDetails(name, pos_to_right, pos_to_top, height, width){
             $(".mask").css({"visibility": "visible",});
             $(".mask").stop().animate({opacity: 1},{duration: 300});
             $(".details").attr("src", "image/"+ name + ".png");
             $(".details").css({
-                "height": "70%",
-                "width": "auto",
+                "height": height,
+                "width": width,
                 "position": "absolute",
                 "top": pos_to_top,
                 "right": pos_to_right
@@ -124,7 +151,7 @@
     
             var hmax = Math.floor(($(window).height() *  0.5));
             var hmin = Math.floor( $(window).height() *  0.1);
-            var wmax = Math.floor($(window).width() * 0.7);
+            var wmax = Math.floor($(window).width() * 0.6);
             var wmin = Math.floor($(window).width() * 0.15);
             
             var nh = Math.floor(Math.random()* (hmax - hmin + 1) + hmin);
